@@ -6,10 +6,9 @@
 **Author**
 
 **Medagam Shishira Reddy**
-Department of Computer Science
-Keshav Memorial Engineering College
+Department of Computer Science,
+Keshav Memorial Engineering College,
 Hyderabad, India
-Email: [shishiramedagam@gmail.com](mailto:shishiramedagam@gmail.com)
 
 
 **Abstract**
