@@ -1,90 +1,87 @@
-**Title**
+#  Arabic Digit Recognizer using CNN on MNIST Dataset
 
-**Arabic Digit Recognizer using CNN on MNIST Dataset**
+A deep learning-based system that classifies handwritten Arabic digits (0–9) using a Convolutional Neural Network (CNN) built with TensorFlow and Keras. The project achieves 96% test accuracy and is optimized for lightweight deployment using Flask or Streamlit.
 
+---
 
-**Author**
+##  Abstract
 
-**Medagam Shishira Reddy**
-Department of Computer Science,
-Keshav Memorial Engineering College,
-Hyderabad, India
+This project presents the design and implementation of a CNN model to recognize handwritten Arabic numerals using a modified version of the MNIST dataset. The solution is designed for high accuracy, portability, and extensibility into real-time applications. It includes complete documentation and logs for reproducibility.
 
+---
 
-**Abstract**
+##  Tech Stack
 
-This paper presents the design and implementation of a Convolutional Neural Network (CNN) to classify handwritten Arabic numerals from the MNIST dataset. The model is trained using TensorFlow and Keras, achieving 96% accuracy on the test set. The project involves preprocessing, model design, evaluation, and documentation. The solution is efficient, lightweight, and suitable for mobile or web deployment. Comprehensive documentation was created using Microsoft Word and technical writing templates.
+- **Language**: Python 3.x  
+- **Libraries**: TensorFlow, Keras, NumPy, Matplotlib  
+- **Deployment (optional)**: Flask / Streamlit  
+- **Documentation**: Microsoft Word (IEEE format), Grammarly
 
+---
 
-**Keywords**
+##  Dataset
 
-Arabic digits, MNIST, CNN, digit recognition, deep learning, Keras, TensorFlow
+- **Name**: Arabic Handwritten Digits Dataset  
+- **Source**: [Kaggle](https://www.kaggle.com/datasets/mloey1/ahdd1)  
+- **Structure**:
+  - 60,000 training images  
+  - 10,000 test images  
+  - 28×28 pixel grayscale images  
+  - Labels: digits 0 to 9 (in Arabic numerals)
 
+---
 
-**1. Introduction**
-
-Automatic recognition of handwritten Arabic numerals is a fundamental task in image processing and pattern recognition. It has applications in digital forms, postal codes, banking systems, and document digitization. In this project, we developed a Convolutional Neural Network (CNN) using Keras and TensorFlow to classify digits from the Arabic subset of the MNIST dataset.
-
-
-**2. Dataset**
-
-We used a publicly available Arabic Handwritten Digits dataset based on the MNIST format. The dataset consists of 60,000 training images and 10,000 test images, each 28x28 pixels in grayscale, labeled from 0 to 9.
-
-
-
-**3. Model Architecture**
+##  Model Architecture
 
 The CNN model consists of:
 
-* 2 Convolutional layers (32 and 64 filters)
-* 2 MaxPooling layers (2×2)
-* Dropout (0.25, 0.5)
-* Flatten layer
-* Dense layer (128 neurons with ReLU)
-* Output Dense layer (10 neurons with Softmax)
+- 2 Convolutional layers (32 and 64 filters)  
+- 2 MaxPooling layers (2×2)  
+- Dropout layers (0.25 and 0.5)  
+- Flatten layer  
+- Dense layer with 128 ReLU units  
+- Output Dense layer with 10 Softmax neurons  
 
-The model is compiled with categorical cross-entropy loss, Adam optimizer, and accuracy as the evaluation metric.
+- **Loss Function**: Categorical Crossentropy  
+- **Optimizer**: Adam  
+- **Metrics**: Accuracy
 
+---
 
- **4. Training and Results**
+##  Training and Results
 
-The model was trained for 10 epochs with a batch size of 128. It achieved:
+- **Epochs**: 10  
+- **Batch Size**: 128  
+- **Training Accuracy**: 98.5%  
+- **Test Accuracy**: 96.2%  
+- Regularization using dropout minimized overfitting  
+- Training and validation curves showed strong convergence
 
-* **Training Accuracy:** 98.5%
-* **Test Accuracy:** 96.2%
-* Minimal overfitting due to regularization (dropout)
-* Validation curves showed good convergence
+---
 
+##  Deployment
 
-**5. Deployment**
+The trained model is saved as a `.h5` file and can be deployed using:
 
-The trained model is saved in `.h5` format and can be deployed using a simple Flask or Streamlit interface. The model supports both live-drawing and static image input for predictions.
+- **Flask API** (for backend prediction)  
+- **Streamlit UI** (for interactive digit drawing or image upload)  
 
+Supports:
+- Real-time digit prediction  
+- Static image input  
+- REST API response in JSON format
 
-**6. Documentation**
+---
 
-All components of the project are documented using Microsoft Word in an IEEE-style format. Documentation includes:
+##  Project Structure
 
-* System architecture
-* Training logs and accuracy graphs
-* Model summary
-* Usage instructions
-* Deployment guide
-
-Grammarly was used to improve writing quality and consistency.
-
-
-**7. Conclusion**
-
-This project demonstrates the effectiveness of CNNs for digit recognition using the Arabic MNIST dataset. The system achieves high accuracy with low computational requirements and can be integrated into applications that require Arabic digit recognition.
-
-
-**References**
-
-1. Y. LeCun et al., "Gradient-Based Learning Applied to Document Recognition," *Proceedings of the IEEE*, vol. 86, no. 11, 1998.
-2. François Chollet, "Keras: Deep learning library," [https://keras.io](https://keras.io)
-3. Abadi et al., "TensorFlow: A system for large-scale machine learning," OSDI 2016.
-4. Arabic Handwritten Digits Dataset, [https://www.kaggle.com/datasets/mloey1/ahdd1](https://www.kaggle.com/datasets/mloey1/ahdd1)
-
-
-
+```text
+arabic-digit-recognizer/
+├── data/                  # Dataset files
+├── models/                # Saved model (.h5)
+├── notebooks/             # Jupyter notebooks for EDA and model training
+├── train_model.py         # Training script
+├── predict.py             # Prediction CLI script
+├── app.py                 # Streamlit or Flask app (optional)
+├── README.md              # Project documentation
+└── requirements.txt       # Python dependencies
