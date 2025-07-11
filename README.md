@@ -20,7 +20,7 @@ A deep learning-based system that uses a Convolutional Neural Network (CNN) to r
 
 ---
 
-## 🔍 Overview
+##  Overview
 
 Arabic Digit Recognizer is a deep learning project that classifies handwritten Arabic numerals using a CNN. It is trained on a variation of the MNIST dataset tailored for Arabic digits. The goal is to enable digit recognition in documents, forms, or any image-based input.
 
